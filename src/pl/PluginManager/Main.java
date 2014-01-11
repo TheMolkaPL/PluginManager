@@ -9,23 +9,23 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class Main extends JavaPlugin implements Listener{
 
-	public String prefix = "§c[§6PluginManager§c] ";
+	public String prefix = "ï¿½c[ï¿½6PluginManagerï¿½c] ";
 	
 	public void onEnable(){
 		this.getServer().getPluginManager().registerEvents(this, this);
 		PluginDescriptionFile pdf = this.getDescription();
-		System.out.println("Plugin "+pdf.getName()+" v"+pdf.getVersion()+" zostal wlaczony!");
+		System.out.println("Plugin "+pdf.getName()+" v"+pdf.getVersion()+" has been enabled!");
 	}
 	
 	public void onDisable(){
 		PluginDescriptionFile pdf = this.getDescription();
-		System.out.println("Plugin "+pdf.getName()+" v"+pdf.getVersion()+" zostal wylaczony!");
+		System.out.println("Plugin "+pdf.getName()+" v"+pdf.getVersion()+" has been disabled!");
 	}
 	
 	@EventHandler
 	public void Info(PlayerJoinEvent event){
 		Player player = event.getPlayer();
-		player.sendMessage(prefix+"§6Ten serwer uzywa pluginu PluginManager v"+this.getDescription().getVersion()+" by UssCompany i DragoPL!");
+		player.sendMessage(prefix+"ï¿½6This server used luginManager v"+this.getDescription().getVersion()+" by UssCompany and DragoPL!");
 		return;
 	}
 }
