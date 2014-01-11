@@ -20,8 +20,4 @@ public class Main extends JavaPlugin{
 		PluginDescriptionFile pdf = this.getDescription();
 		System.out.println("Plugin "+pdf.getName()+" v"+pdf.getVersion()+" has been disabled!");
 	}
-	
-	public String addPrefix(){
-		return this.prefix();
-	}
 }
