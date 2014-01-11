@@ -14,9 +14,9 @@ public class ManagerCommand implements CommandExecutor {
 		this.plugin = plugin;
 	}
 	
-	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-		if (cmd.getName().equalsIgnoreCase("pluginmanager")){
-			if (args.length == 0){
+	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args){
+		if(cmd.getName().equalsIgnoreCase("pluginmanager")){
+			if(args.length == 0){
 				Player player = (Player)sender;
 				player.sendMessage(prefix+"§cCorrect usage: §6/pluginmanager <help|on|off> [plugin name]");
 			}
