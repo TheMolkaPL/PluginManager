@@ -1,0 +1,4 @@
+name: PluginManager
+main: pl.PluginManager.Main.java
+version: 0.0.1
+authors: [DragoPL/eX., UssCompany]
