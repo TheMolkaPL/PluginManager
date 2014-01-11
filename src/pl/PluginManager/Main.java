@@ -7,12 +7,14 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class Main extends JavaPlugin implements Listener{
-
+public class Main extends JavaPlugin{
+	
+	public InfoListener infolistener;
 	public String prefix = "§c[§6PluginManager§c] ";
 	
 	public void onEnable(){
-		this.getServer().getPluginManager().registerEvents(this, this);
+		this.infolistener = new InfoListener(this);
+		this.getServer().getPluginManager().registerEvents(new InfoListener(this), this);
 		PluginDescriptionFile pdf = this.getDescription();
 		System.out.println("Plugin "+pdf.getName()+" v"+pdf.getVersion()+" has been enabled!");
 	}
@@ -20,12 +22,5 @@ public class Main extends JavaPlugin implements Listener{
 	public void onDisable(){
 		PluginDescriptionFile pdf = this.getDescription();
 		System.out.println("Plugin "+pdf.getName()+" v"+pdf.getVersion()+" has been disabled!");
-	}
-	
-	@EventHandler
-	public void Info(PlayerJoinEvent event){
-		Player player = event.getPlayer();
-		player.sendMessage(prefix+"§6This server used luginManager v"+this.getDescription().getVersion()+" by UssCompany and DragoPL!");
-		return;
 	}
 }
