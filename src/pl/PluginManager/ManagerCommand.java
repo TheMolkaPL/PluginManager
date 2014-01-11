@@ -9,25 +9,19 @@ public class ManagerCommand implements CommandExecutor {
 	private Main plugin;
 	
 	public ManagerCommand(Main plugin) {
-		
 		this.plugin = plugin;
-		
 	}
 	
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-		
 		if (cmd.getName().equalsIgnoreCase("pluginmanager")) {
-			
-			if (args[0].equalsIgnoreCase("help")) {
-				
-				sender.sendMessage("Plugin's help (to do)");
-				return true;
-				
+			if (args.length == 1) {
+				if (args[0].equalsIgnoreCase("help")) {
+					sender.sendMessage("Plugin's help (to do)");
+					return true;
+				}
+			return false;
 			}
-			
 		}
 		return false;
-		
 	}
-	
 }
