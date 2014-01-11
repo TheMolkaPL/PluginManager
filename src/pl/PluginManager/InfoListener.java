@@ -7,9 +7,6 @@ import org.bukkit.event.player.PlayerJoinEvent;
 
 public class InfoListener implements Listener{
 	
-	
-	public String prefix = "§c[§6PluginManager§c] ";
-	
 	Main plugin;
 	
 	public InfoListener(Main plugin){
