@@ -3,3 +3,7 @@ main: pl.PluginManager.Main
 version: 0.0.1
 authors: [DragoPL/eX., UssCompany]
 description: Plugins managing!
+commands:
+  pluginmanager:
+    aliases: [pluginman, plgmanager, manager]
+    description: PluginManager Command.
