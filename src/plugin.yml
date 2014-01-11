@@ -2,4 +2,4 @@ name: PluginManager
 main: pl.PluginManager.Main
 version: 0.0.1
 authors: [DragoPL/eX., UssCompany]
-description: Zarzadzanie pluginami!
+description: Plugins managing!
