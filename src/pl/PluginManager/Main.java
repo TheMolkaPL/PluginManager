@@ -9,7 +9,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class Main extends JavaPlugin implements Listener{
 
-	public String prefix = "�c[�6PluginManager�c] ";
+	public String prefix = "§c[§6PluginManager§c] ";
 	
 	public void onEnable(){
 		this.getServer().getPluginManager().registerEvents(this, this);
@@ -25,7 +25,7 @@ public class Main extends JavaPlugin implements Listener{
 	@EventHandler
 	public void Info(PlayerJoinEvent event){
 		Player player = event.getPlayer();
-		player.sendMessage(prefix+"�6This server used luginManager v"+this.getDescription().getVersion()+" by UssCompany and DragoPL!");
+		player.sendMessage(prefix+"§6This server used luginManager v"+this.getDescription().getVersion()+" by UssCompany and DragoPL!");
 		return;
 	}
 }
