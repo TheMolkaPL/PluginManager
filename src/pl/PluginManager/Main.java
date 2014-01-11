@@ -6,7 +6,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class Main extends JavaPlugin{
 	
 	public InfoListener infolistener;
-	public String prefix = "§c[§6PluginManager§c] ";
+	public String prefix = "§6»§cPluginManager§6« ";
 	
 	public void onEnable(){
 		this.infolistener = new InfoListener(this);
