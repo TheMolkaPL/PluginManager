@@ -19,7 +19,7 @@ public class InfoListener implements Listener{
 	@EventHandler
 	public void Info(PlayerJoinEvent event){
 		Player player = event.getPlayer();
-		player.sendMessage(prefix+"§6This server used PluginManager v"+this.plugin.getDescription().getVersion()+" by UssCompany and DragoPL!");
+		player.sendMessage("§6This server used §cPluginManager §cv"+this.plugin.getDescription().getVersion()+" §6by UssCompany and DragoPL!");
 		return;
 	}
 }
