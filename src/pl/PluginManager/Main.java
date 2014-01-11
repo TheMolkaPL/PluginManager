@@ -6,7 +6,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class Main extends JavaPlugin{
 	
 	public InfoListener infolistener;
-	public String prefix = "��c[��6PluginManager��c] ";
+	public String prefix = "§c[§6PluginManager§c] ";
 	
 	public void onEnable(){
 		this.infolistener = new InfoListener(this);
@@ -19,5 +19,9 @@ public class Main extends JavaPlugin{
 	public void onDisable(){
 		PluginDescriptionFile pdf = this.getDescription();
 		System.out.println("Plugin "+pdf.getName()+" v"+pdf.getVersion()+" has been disabled!");
+	}
+	
+	public String addPrefix(){
+		return this.prefix();
 	}
 }
