@@ -4,15 +4,13 @@ version: 0.0.1
 authors: [DragoPL/eX., UssCompany]
 description: Plugins managing!
 commands:
-  pluginmanager:
-    aliases: [pluginman, plgmanager, manager]
-    description: PluginManager Command.
+    pluginmanager:
+        aliases: [pluginman, plgmanager, manager]
+        description: PluginManager Command.
 permissions:
-  pluginmanager.pluginon:
-    description: Allows you to use the /pluginmanager on command
-  pluginmanager.pluginoff:
-    description: Allows you to use the /pluginmanager off command
-  pluginmanager.reload:
-    description: Allows you to use the /pluginmanager reload command
-  pluginmanager.*:
-    description: Allows you to use all plugin's commands
+    pluginmanager.pluginon:
+        description: Allows you to use the /pluginmanager on command
+    pluginmanager.pluginoff:
+        description: Allows you to use the /pluginmanager off command
+    pluginmanager.*:
+        description: Allows you to use all plugin's commands
