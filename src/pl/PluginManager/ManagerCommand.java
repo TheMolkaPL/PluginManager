@@ -39,21 +39,21 @@ public class ManagerCommand implements CommandExecutor {
 						Player playersender = (Player)sender;
 						if(playersender.hasPermission("pluginmanager.pluginon") || playersender.hasPermission("pluginmanager.*")){
 							if (!(plugin == null)) {
-								playersender.sendMessage(prefix+"��6Succesfuly enabled plugin ��c"+plugin+"��6!");
+								playersender.sendMessage(prefix+ChatColor.GOLD+"Succesfuly enabled plugin "+ChatColor.RED+plugin+ChatColor.GOLD+" !");
 								this.plugin.getServer().getPluginManager().enablePlugin(plugin);
 								return true;
 							}else{
-								playersender.sendMessage(prefix+"��6This plugin doesn't exist!");
+								playersender.sendMessage(prefix+ChatColor.GOLD+"This plugin doesn't exist!");
 								return true;
 							}
 						}
 					}else{
 						if (!(plugin == null)) {
-							sender.sendMessage(prefix+"��6Succesfuly enabled plugin ��c"+plugin+"��6!");
+							sender.sendMessage(prefix+ChatColor.GOLD+"Succesfuly enabled plugin "+ChatColor.RED+plugin+ChatColor.GOLD+" !");
 							this.plugin.getServer().getPluginManager().enablePlugin(plugin);
 							return true;
 						}else{
-							sender.sendMessage(prefix+"��6This plugin doesn't exist!");
+							sender.sendMessage(prefix+ChatColor.GOLD+"This plugin doesn't exist!");
 							return true;
 						}
 					}
@@ -64,21 +64,21 @@ public class ManagerCommand implements CommandExecutor {
 						Player playersender = (Player)sender;
 						if(playersender.hasPermission("pluginmanager.pluginoff") || playersender.hasPermission("pluginmanager.*")){
 							if (!(plugin == null)) {
-								playersender.sendMessage(prefix+"��6Succesfuly disabled plugin ��c"+plugin+"��6!");
+								playersender.sendMessage(prefix+ChatColor.GOLD+"Succesfuly disabled plugin "+ChatColor.RED+plugin+ChatColor.GOLD+" !");
 								this.plugin.getServer().getPluginManager().disablePlugin(plugin);
 								return true;
 							}else{
-								playersender.sendMessage(prefix+"��6This plugin doesn't exist!");
+								playersender.sendMessage(prefix+ChatColor.GOLD+"This plugin doesn't exist!");
 								return true;
 							}
 						}
 					}else{
 						if (!(plugin == null)) {
-							sender.sendMessage(prefix+"��6Succesfuly disabled plugin ��c"+plugin+"��6!");
+							sender.sendMessage(prefix+ChatColor.GOLD+"Succesfuly disabled plugin "+ChatColor.RED+plugin+ChatColor.GOLD+" !");
 							this.plugin.getServer().getPluginManager().disablePlugin(plugin);
 							return true;
 						}else{
-							sender.sendMessage(prefix+"��6This plugin doesn't exist!");
+							sender.sendMessage(prefix+ChatColor.GOLD+"This plugin doesn't exist!");
 							return true;
 						}
 					}
