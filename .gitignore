@@ -1,0 +1,8 @@
+.classpath
+.metadata/*
+.metadata
+.project
+.settings/*
+.settings
+bin
+bin/*
