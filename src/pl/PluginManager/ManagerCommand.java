@@ -1,89 +1,36 @@
 package pl.PluginManager;
 
-import org.bukkit.Bukkit;
-import org.bukkit.command.Command;
-import org.bukkit.command.CommandExecutor;
-import org.bukkit.command.CommandSender;
-import org.bukkit.entity.Player;
-import org.bukkit.plugin.Plugin;
+import org.bukkit.plugin.PluginDescriptionFile;
+import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.ChatColor;
 
-public class ManagerCommand implements CommandExecutor {
+public class Main extends JavaPlugin{
 	
-	public String prefix = ChatColor.RED + "[" + ChatColor.GOLD + "PluginManager" + ChatColor.RED + "] ";
 	
-	Main plugin;
+	public String eplg = "default";
+	public String dplg = "default";
+	public InfoListener infolistener;
+	public String prefix = ChatColor.RED+"[" + ChatColor.GOLD + "PluginManager" + ChatColor.RED + "] ";
 	
-	public ManagerCommand(Main plugin) {
-		this.plugin = plugin;
+	public void onEnable(){
+		this.saveDefaultConfig();
+		this.saveConfig();
+		String enabledplg = (String) this.getConfig().get("enabled-plugin", eplg);
+		String disabledplg = (String) this.getConfig().get("disabled-plugin", dplg);
+		this.infolistener = new InfoListener(this);
+		this.getServer().getPluginManager().registerEvents(new InfoListener(this), this);
+		this.getCommand("pluginmanager").setExecutor(new ManagerCommand(this));
+		PluginDescriptionFile pdf = this.getDescription();
+		System.out.println("Plugin "+pdf.getName()+" v"+pdf.getVersion()+" has been enabled!");
+		eplg = enabledplg;
+		dplg = disabledplg;
+		this.reloadConfig();
 	}
 	
-	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args){
-		if(cmd.getName().equalsIgnoreCase("pluginmanager")){
-			if(args.length == 0){
-				sender.sendMessage(ChatColor.GOLD + "Correct usage: " + ChatColor.RED + "/pluginmanager <help|on|off> [plugin name]");
-			}
-			if(args.length == 1){
-				if(args[0].equalsIgnoreCase("help")){
-					sender.sendMessage(ChatColor.RED + "                       PluginManager " + ChatColor.GOLD + "- " + ChatColor.RED + "v" + this.plugin.getDescription().getVersion());
-					sender.sendMessage(ChatColor.GOLD + " /pluginmanager on [plugin name] " + ChatColor.RED + "- " + ChatColor.GOLD + "enabling specify plugin");
-					sender.sendMessage(ChatColor.GOLD + " /pluginmanager off [plugin name] " + ChatColor.RED + "- " + ChatColor.GOLD + "disabling specify plugin");
-					sender.sendMessage(ChatColor.RED + "                       PluginManager " + ChatColor.GOLD + "- " + ChatColor.RED + "v" + this.plugin.getDescription().getVersion());;
-					return true;
-				}
-			}
-			if(args.length == 2){
-				Plugin plugin = Bukkit.getPluginManager().getPlugin(args[1]);
-				if(args[0].equalsIgnoreCase("on")) {
-					if (sender instanceof Player) {
-						Player player = (Player)sender;
-						if(player.hasPermission("pluginmanager.pluginon") || player.hasPermission("pluginmanager.*")){
-							if (!(plugin == null)) {
-								player.sendMessage(prefix+ChatColor.GOLD+"Succesfuly enabled plugin "+ChatColor.RED+plugin+ChatColor.GOLD+"!");
-								this.plugin.getServer().getPluginManager().enablePlugin(plugin);
-								return true;
-							}else{
-								player.sendMessage(prefix+ChatColor.GOLD+"This plugin doesn't exist!");
-								return true;
-							}
-						}
-					}else{
-						if (!(plugin == null)) {
-							sender.sendMessage(prefix+ChatColor.GOLD+"Succesfuly enabled plugin "+ChatColor.RED+plugin+ChatColor.GOLD+"!");
-							this.plugin.getServer().getPluginManager().enablePlugin(plugin);
-							return true;
-						}else{
-							sender.sendMessage(prefix+ChatColor.GOLD+"This plugin doesn't exist!");
-							return true;
-						}
-					}
-				}
-				if(args[0].equalsIgnoreCase("off")){
-					if (sender instanceof Player) {
-						Player player = (Player)sender;
-						if(player.hasPermission("pluginmanager.pluginoff") || player.hasPermission("pluginmanager.*")){
-							if (!(plugin == null)) {
-								player.sendMessage(prefix+ChatColor.GOLD+"Succesfuly disabled plugin "+ChatColor.RED+plugin+ChatColor.GOLD+"!");
-								this.plugin.getServer().getPluginManager().disablePlugin(plugin);
-								return true;
-							}else{
-								player.sendMessage(prefix+ChatColor.GOLD+"This plugin doesn't exist!");
-								return true;
-							}
-						}
-					}else{
-						if (!(plugin == null)) {
-							sender.sendMessage(prefix+ChatColor.GOLD+"Succesfuly disabled plugin "+ChatColor.RED+plugin+ChatColor.GOLD+"!");
-							this.plugin.getServer().getPluginManager().disablePlugin(plugin);
-							return true;
-						}else{
-							sender.sendMessage(prefix+ChatColor.GOLD+"This plugin doesn't exist!");
-							return true;
-						}
-					}
-				}
-			}
-		}
-		return false;
+	public void onDisable(){
+		PluginDescriptionFile pdf = this.getDescription();
+		System.out.println("Plugin "+pdf.getName()+" v"+pdf.getVersion()+" has been disabled!");
+		this.saveConfig();
+		this.reloadConfig();
 	}
 }
