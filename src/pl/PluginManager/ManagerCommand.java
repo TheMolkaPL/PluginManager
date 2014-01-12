@@ -39,7 +39,7 @@ public class ManagerCommand implements CommandExecutor {
 						Player player = (Player)sender;
 						if(player.hasPermission("pluginmanager.pluginon") || player.hasPermission("pluginmanager.*")){
 							if (!(plugin == null)) {
-								player.sendMessage(prefix + ChatColor.GOLD + "Succesfuly enabled plugin " + ChatColor.RED + plugin+ChatColor.GOLD + "!");
+								player.sendMessage(prefix + ChatColor.GOLD + "Succesfully enabled plugin " + ChatColor.RED + plugin+ChatColor.GOLD + "!");
 								this.plugin.getServer().getPluginManager().enablePlugin(plugin);
 								return true;
 							}else{
@@ -52,7 +52,7 @@ public class ManagerCommand implements CommandExecutor {
 						}
 					}else{
 						if (!(plugin == null)) {
-							sender.sendMessage(prefix + ChatColor.GOLD + "Succesfuly enabled plugin " + ChatColor.RED + plugin + ChatColor.GOLD + "!");
+							sender.sendMessage(prefix + ChatColor.GOLD + "Succesfully enabled plugin " + ChatColor.RED + plugin + ChatColor.GOLD + "!");
 							this.plugin.getServer().getPluginManager().enablePlugin(plugin);
 							return true;
 						}else{
@@ -66,7 +66,7 @@ public class ManagerCommand implements CommandExecutor {
 						Player player = (Player)sender;
 						if(player.hasPermission("pluginmanager.pluginoff") || player.hasPermission("pluginmanager.*")){
 							if (!(plugin == null)) {
-								player.sendMessage(prefix + ChatColor.GOLD + "Succesfuly disabled plugin " + ChatColor.RED + plugin + ChatColor.GOLD + "!");
+								player.sendMessage(prefix + ChatColor.GOLD + "Succesfully disabled plugin " + ChatColor.RED + plugin + ChatColor.GOLD + "!");
 								this.plugin.getServer().getPluginManager().disablePlugin(plugin);
 								return true;
 							}else{
@@ -79,7 +79,7 @@ public class ManagerCommand implements CommandExecutor {
 						}
 					}else{
 						if (!(plugin == null)) {
-							sender.sendMessage(prefix + ChatColor.GOLD + "Succesfuly disabled plugin " + ChatColor.RED + plugin + ChatColor.GOLD + "!");
+							sender.sendMessage(prefix + ChatColor.GOLD + "Succesfully disabled plugin " + ChatColor.RED + plugin + ChatColor.GOLD + "!");
 							this.plugin.getServer().getPluginManager().disablePlugin(plugin);
 							return true;
 						}else{
