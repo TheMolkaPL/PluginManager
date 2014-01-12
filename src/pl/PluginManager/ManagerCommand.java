@@ -10,7 +10,7 @@ import org.bukkit.ChatColor;
 
 public class ManagerCommand implements CommandExecutor {
 	
-	public String prefix = ChatColor.GOLD + "[" + ChatColor.RED + "PluginManager" + ChatColor.GOLD + "]";
+	public String prefix = ChatColor.RED + "[" + ChatColor.GOLD + "PluginManager" + ChatColor.RED+ "]";
 	
 	Main plugin;
 	
@@ -33,8 +33,8 @@ public class ManagerCommand implements CommandExecutor {
 				}
 			}
 			if(args.length == 2){
+				Plugin plugin = Bukkit.getPluginManager().getPlugin(args[1]);
 				if(args[0].equalsIgnoreCase("on")) {
-					Plugin plugin = Bukkit.getPluginManager().getPlugin(args[1]);
 					if (sender instanceof Player) {
 						Player player = (Player)sender;
 						if(player.hasPermission("pluginmanager.pluginon") || player.hasPermission("pluginmanager.*")){
@@ -59,7 +59,6 @@ public class ManagerCommand implements CommandExecutor {
 					}
 				}
 				if(args[0].equalsIgnoreCase("off")){
-					Plugin plugin = Bukkit.getPluginManager().getPlugin(args[1]);
 					if (sender instanceof Player) {
 						Player player = (Player)sender;
 						if(player.hasPermission("pluginmanager.pluginoff") || player.hasPermission("pluginmanager.*")){
