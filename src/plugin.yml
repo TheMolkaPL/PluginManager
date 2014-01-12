@@ -10,3 +10,5 @@ commands:
 permissions:
   pluginon:
     description: Allows you to use the /pluginmanager on command
+  pluginoff:
+    description: Allows you to use the /pluginmanager off command
