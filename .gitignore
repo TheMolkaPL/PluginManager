@@ -6,3 +6,6 @@
 .settings
 bin
 bin/*
+*.jar
+TestServer
+TestServer/*
