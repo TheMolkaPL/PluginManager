@@ -6,10 +6,11 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
+import org.bukkit.ChatColor;
 
 public class ManagerCommand implements CommandExecutor {
 	
-	public String prefix = "��6����cPluginManager��6�� ";
+	public String prefix = ChatColor.GOLD + "[" + ChatColor.RED + "PluginManager" + ChatColor.GOLD + "]";
 	
 	Main plugin;
 	
@@ -20,14 +21,14 @@ public class ManagerCommand implements CommandExecutor {
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args){
 		if(cmd.getName().equalsIgnoreCase("pluginmanager")){
 			if(args.length == 0){
-				sender.sendMessage("��6Correct usage: ��c/pluginmanager <help|on|off> [plugin name]");
+				sender.sendMessage(ChatColor.GOLD + "Correct usage: " + ChatColor.RED + "/pluginmanager <help|on|off> [plugin name]");
 			}
 			if(args.length == 1){
 				if(args[0].equalsIgnoreCase("help")){
-					sender.sendMessage("                       ��6�� ��cPluginManager ��6- ��cv"+this.plugin.getDescription().getVersion()+" ��6��");
-					sender.sendMessage(" ��6/pluginmanager on [plugin name] ��c- ��6enabling specify plugin");
-					sender.sendMessage(" ��6/pluginmanager off [plugin name] ��c- ��6disabling specify plugin");
-					sender.sendMessage("                       ��6�� ��cPluginManager ��6- ��cv"+this.plugin.getDescription().getVersion()+" ��6��");
+					sender.sendMessage(ChatColor.RED + "                       PluginManager " + ChatColor.GOLD + "- " + ChatColor.RED + this.plugin.getDescription().getVersion());
+					sender.sendMessage(ChatColor.GOLD + " /pluginmanager on [plugin name] " + ChatColor.RED + "- " + ChatColor.GOLD + "enabling specify plugin");
+					sender.sendMessage(ChatColor.GOLD + " /pluginmanager off [plugin name] " + ChatColor.RED + "- " + ChatColor.GOLD + "disabling specify plugin");
+					sender.sendMessage(ChatColor.RED + "                       PluginManager " + ChatColor.GOLD + "- " + ChatColor.RED + this.plugin.getDescription().getVersion());
 					return true;
 				}
 			}
