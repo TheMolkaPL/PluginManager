@@ -7,3 +7,6 @@ commands:
   pluginmanager:
     aliases: [pluginman, plgmanager, manager]
     description: PluginManager Command.
+permissions:
+  pluginon:
+    description: Allows you to use the /pluginmanager on command
