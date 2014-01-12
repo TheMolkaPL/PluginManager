@@ -12,5 +12,7 @@ permissions:
     description: Allows you to use the /pluginmanager on command
   pluginmanager.pluginoff:
     description: Allows you to use the /pluginmanager off command
+  pluginmanager.reload:
+    description: Allows you to use the /pluginmanager reload command
   pluginmanager.*:
     description: Allows you to use all plugin's commands
