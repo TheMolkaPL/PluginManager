@@ -10,7 +10,7 @@ import org.bukkit.ChatColor;
 
 public class ManagerCommand implements CommandExecutor {
 	
-	public String prefix = ChatColor.RED + "[" + ChatColor.GOLD + "PluginManager" + ChatColor.RED + "]";
+	public String prefix = ChatColor.RED + "[" + ChatColor.GOLD + "PluginManager" + ChatColor.RED + "] ";
 	
 	Main plugin;
 	
