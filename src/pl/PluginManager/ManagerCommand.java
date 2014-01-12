@@ -25,10 +25,10 @@ public class ManagerCommand implements CommandExecutor {
 			}
 			if(args.length == 1){
 				if(args[0].equalsIgnoreCase("help")){
-					sender.sendMessage(ChatColor.RED + "                       PluginManager " + ChatColor.GOLD + "- " + ChatColor.RED + this.plugin.getDescription().getVersion());
+					sender.sendMessage(ChatColor.RED + "                       PluginManager " + ChatColor.GOLD + "- " + ChatColor.RED + "v" + this.plugin.getDescription().getVersion());
 					sender.sendMessage(ChatColor.GOLD + " /pluginmanager on [plugin name] " + ChatColor.RED + "- " + ChatColor.GOLD + "enabling specify plugin");
 					sender.sendMessage(ChatColor.GOLD + " /pluginmanager off [plugin name] " + ChatColor.RED + "- " + ChatColor.GOLD + "disabling specify plugin");
-					sender.sendMessage(ChatColor.RED + "                       PluginManager " + ChatColor.GOLD + "- " + ChatColor.RED + this.plugin.getDescription().getVersion());
+					sender.sendMessage(ChatColor.RED + "                       PluginManager " + ChatColor.GOLD + "- " + ChatColor.RED + "v" + this.plugin.getDescription().getVersion());;
 					return true;
 				}
 			}
@@ -39,7 +39,7 @@ public class ManagerCommand implements CommandExecutor {
 						Player player = (Player)sender;
 						if(player.hasPermission("pluginmanager.pluginon") || player.hasPermission("pluginmanager.*")){
 							if (!(plugin == null)) {
-								player.sendMessage(prefix+ChatColor.GOLD+"Succesfuly enabled plugin "+ChatColor.RED+plugin+ChatColor.GOLD+" !");
+								player.sendMessage(prefix+ChatColor.GOLD+"Succesfuly enabled plugin "+ChatColor.RED+plugin+ChatColor.GOLD+"!");
 								this.plugin.getServer().getPluginManager().enablePlugin(plugin);
 								return true;
 							}else{
@@ -49,7 +49,7 @@ public class ManagerCommand implements CommandExecutor {
 						}
 					}else{
 						if (!(plugin == null)) {
-							sender.sendMessage(prefix+ChatColor.GOLD+"Succesfuly enabled plugin "+ChatColor.RED+plugin+ChatColor.GOLD+" !");
+							sender.sendMessage(prefix+ChatColor.GOLD+"Succesfuly enabled plugin "+ChatColor.RED+plugin+ChatColor.GOLD+"!");
 							this.plugin.getServer().getPluginManager().enablePlugin(plugin);
 							return true;
 						}else{
@@ -63,7 +63,7 @@ public class ManagerCommand implements CommandExecutor {
 						Player player = (Player)sender;
 						if(player.hasPermission("pluginmanager.pluginoff") || player.hasPermission("pluginmanager.*")){
 							if (!(plugin == null)) {
-								player.sendMessage(prefix+ChatColor.GOLD+"Succesfuly disabled plugin "+ChatColor.RED+plugin+ChatColor.GOLD+" !");
+								player.sendMessage(prefix+ChatColor.GOLD+"Succesfuly disabled plugin "+ChatColor.RED+plugin+ChatColor.GOLD+"!");
 								this.plugin.getServer().getPluginManager().disablePlugin(plugin);
 								return true;
 							}else{
@@ -73,7 +73,7 @@ public class ManagerCommand implements CommandExecutor {
 						}
 					}else{
 						if (!(plugin == null)) {
-							sender.sendMessage(prefix+ChatColor.GOLD+"Succesfuly disabled plugin "+ChatColor.RED+plugin+ChatColor.GOLD+" !");
+							sender.sendMessage(prefix+ChatColor.GOLD+"Succesfuly disabled plugin "+ChatColor.RED+plugin+ChatColor.GOLD+"!");
 							this.plugin.getServer().getPluginManager().disablePlugin(plugin);
 							return true;
 						}else{
