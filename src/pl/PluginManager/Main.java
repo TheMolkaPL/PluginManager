@@ -7,7 +7,7 @@ import org.bukkit.ChatColor;
 public class Main extends JavaPlugin{
 	
 	public InfoListener infolistener;
-	public String prefix = ChatColor.RED+"»"+ChatColor.GOLD+"PluginManager"+ChatColor.RED+"« ";
+	public String prefix = ChatColor.RED + "[" + ChatColor.GOLD + "PluginManager" + ChatColor.RED + "] ";
 	
 	public void onEnable(){
 		this.infolistener = new InfoListener(this);
