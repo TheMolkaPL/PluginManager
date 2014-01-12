@@ -36,14 +36,14 @@ public class ManagerCommand implements CommandExecutor {
 				if(args[0].equalsIgnoreCase("on")) {
 					Plugin plugin = Bukkit.getPluginManager().getPlugin(args[1]);
 					if (sender instanceof Player) {
-						Player playersender = (Player)sender;
-						if(playersender.hasPermission("pluginmanager.pluginon") || playersender.hasPermission("pluginmanager.*")){
+						Player player = (Player)sender;
+						if(player.hasPermission("pluginmanager.pluginon") || player.hasPermission("pluginmanager.*")){
 							if (!(plugin == null)) {
-								playersender.sendMessage(prefix+ChatColor.GOLD+"Succesfuly enabled plugin "+ChatColor.RED+plugin+ChatColor.GOLD+" !");
+								player.sendMessage(prefix+ChatColor.GOLD+"Succesfuly enabled plugin "+ChatColor.RED+plugin+ChatColor.GOLD+" !");
 								this.plugin.getServer().getPluginManager().enablePlugin(plugin);
 								return true;
 							}else{
-								playersender.sendMessage(prefix+ChatColor.GOLD+"This plugin doesn't exist!");
+								player.sendMessage(prefix+ChatColor.GOLD+"This plugin doesn't exist!");
 								return true;
 							}
 						}
@@ -61,14 +61,14 @@ public class ManagerCommand implements CommandExecutor {
 				if(args[0].equalsIgnoreCase("off")){
 					Plugin plugin = Bukkit.getPluginManager().getPlugin(args[1]);
 					if (sender instanceof Player) {
-						Player playersender = (Player)sender;
-						if(playersender.hasPermission("pluginmanager.pluginoff") || playersender.hasPermission("pluginmanager.*")){
+						Player player = (Player)sender;
+						if(player.hasPermission("pluginmanager.pluginoff") || player.hasPermission("pluginmanager.*")){
 							if (!(plugin == null)) {
-								playersender.sendMessage(prefix+ChatColor.GOLD+"Succesfuly disabled plugin "+ChatColor.RED+plugin+ChatColor.GOLD+" !");
+								player.sendMessage(prefix+ChatColor.GOLD+"Succesfuly disabled plugin "+ChatColor.RED+plugin+ChatColor.GOLD+" !");
 								this.plugin.getServer().getPluginManager().disablePlugin(plugin);
 								return true;
 							}else{
-								playersender.sendMessage(prefix+ChatColor.GOLD+"This plugin doesn't exist!");
+								player.sendMessage(prefix+ChatColor.GOLD+"This plugin doesn't exist!");
 								return true;
 							}
 						}
