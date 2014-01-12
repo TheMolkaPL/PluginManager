@@ -60,7 +60,7 @@ public class ManagerCommand implements CommandExecutor {
 				if(args[0].equalsIgnoreCase("off")){
 					if (sender instanceof Player) {
 						Player playersender = (Player)sender;
-						if(playersender.hasPermission("pluginmanager.pluginff") || playersender.hasPermission("pluginmanager.*")){
+						if(playersender.hasPermission("pluginmanager.pluginoff") || playersender.hasPermission("pluginmanager.*")){
 							Plugin plugin = Bukkit.getPluginManager().getPlugin(args[1]);
 							if (!(plugin == null)) {
 								playersender.sendMessage(prefix+"��6Succesfuly disabled plugin ��c"+plugin+"��6!");
