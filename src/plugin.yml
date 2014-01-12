@@ -8,9 +8,11 @@ commands:
         aliases: [pluginman, plgmanager, manager]
         description: PluginManager Command.
 permissions:
-    pluginmanager.pluginon:
-        description: Allows you to use the /pluginmanager on command
-    pluginmanager.pluginoff:
-        description: Allows you to use the /pluginmanager off command
+    pluginmanager.enable:
+        description: Allows you to use the /pluginmanager enable command
+    pluginmanager.disable:
+        description: Allows you to use the /pluginmanager disable command
+    pluginmanager.reload:
+        descroption: Allow you to use the /pluginmaneger reload command
     pluginmanager.*:
         description: Allows you to use all plugin's commands
