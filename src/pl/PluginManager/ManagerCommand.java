@@ -33,10 +33,10 @@ public class ManagerCommand implements CommandExecutor {
 			}
 			if(args.length == 2){
 				if(args[0].equalsIgnoreCase("on")) {
+					Plugin plugin = Bukkit.getPluginManager().getPlugin(args[1]);
 					if (sender instanceof Player) {
 						Player playersender = (Player)sender;
 						if(playersender.hasPermission("pluginmanager.pluginon") || playersender.hasPermission("pluginmanager.*")){
-							Plugin plugin = Bukkit.getPluginManager().getPlugin(args[1]);
 							if (!(plugin == null)) {
 								playersender.sendMessage(prefix+"��6Succesfuly enabled plugin ��c"+plugin+"��6!");
 								this.plugin.getServer().getPluginManager().enablePlugin(plugin);
@@ -58,10 +58,10 @@ public class ManagerCommand implements CommandExecutor {
 					}
 				}
 				if(args[0].equalsIgnoreCase("off")){
+					Plugin plugin = Bukkit.getPluginManager().getPlugin(args[1]);
 					if (sender instanceof Player) {
 						Player playersender = (Player)sender;
 						if(playersender.hasPermission("pluginmanager.pluginoff") || playersender.hasPermission("pluginmanager.*")){
-							Plugin plugin = Bukkit.getPluginManager().getPlugin(args[1]);
 							if (!(plugin == null)) {
 								playersender.sendMessage(prefix+"��6Succesfuly disabled plugin ��c"+plugin+"��6!");
 								this.plugin.getServer().getPluginManager().disablePlugin(plugin);
