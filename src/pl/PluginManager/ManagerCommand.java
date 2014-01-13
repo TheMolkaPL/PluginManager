@@ -125,7 +125,7 @@ public class ManagerCommand implements CommandExecutor {
 							
 						}
 					} else {
-						sender.sendMessage(prefix + ChatColor.GOLD + "This command can by executed only by a player");
+						sender.sendMessage(prefix + ChatColor.GOLD + "This command can be executed only by a player");
 						return true;
 					}
 				}
