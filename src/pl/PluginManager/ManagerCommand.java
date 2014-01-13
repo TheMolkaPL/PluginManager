@@ -118,6 +118,17 @@ public class ManagerCommand implements CommandExecutor {
 						}
 					}
 				}
+				if (args[0].equalsIgnoreCase("check")) {
+					if (sender instanceof Player) {
+						Player player = (Player)sender;
+						if (player.hasPermission("pluginmanager.check") || player.hasPermission("pluginmanager.*")) {
+							
+						}
+					} else {
+						sender.sendMessage(prefix + ChatColor.GOLD + "This command can by executed only by a player");
+						return true;
+					}
+				}
 			}
 		}
 		return false;
