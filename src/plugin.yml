@@ -1,6 +1,6 @@
 name: PluginManager
 main: pl.PluginManager.Main
-version: 0.0.1
+version: 0.3
 authors: [DragoPL/eX., UssCompany]
 description: Plugins managing!
 commands:
