@@ -1,12 +1,13 @@
 name: PluginManager
 main: pl.PluginManager.Main
-version: 0.3
-authors: [DragoPL/eX., UssCompany]
+version: 0.4
+authors: [DragoPL/eX., TheMolkaPL, UssCompany]
 description: Plugins managing!
 commands:
   pluginmanager:
     aliases: [pluginman, plgmanager, manager]
     description: PluginManager Command.
+    usage: '/pluginmanager help' for help
 permissions:
   pluginmanager.enable:
     description: Allows you to use the /pluginmanager enable command
@@ -16,6 +17,8 @@ permissions:
     descroption: Allows you to use the /pluginmanager reload command
   pluginmanager.check:
     description: Allows you to use the /pluginmanager check command
+  pluginmanager.notify:
+    description: Allow you to receive all notifications about plugins
   pluginmanager.*:
     description: Allows you to use all plugin's commands
   
